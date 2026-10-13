@@ -246,7 +246,7 @@ def add_to_user_path(bin_dir: str) -> bool:
             if bin_dir.lower().rstrip("\\") not in (p.lower().rstrip("\\") for p in parts):
                 parts.append(bin_dir)
                 winreg.SetValueEx(key, "Path", 0, winreg.REG_EXPAND_SZ, os.pathsep.join(parts))
-            
+
             result = ctypes.c_ulong()
             ctypes.windll.user32.SendMessageTimeoutW(
                 0xFFFF, 0x001A, 0, "Environment", 0x0002, 5000, ctypes.byref(result)
