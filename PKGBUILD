@@ -1,9 +1,9 @@
 pkgname=dublasync
-pkgver=1.0.0
+pkgver=3.0.0
 pkgrel=1
 pkgdesc="Aplicativo para sincronização e correção de velocidade de áudio para dublagem"
 arch=('any')
-url="https://github.com/snwkkj/DublaSync"
+url="https://github.com/VicioBR/DublaSync"
 license=('LicenseRef-Unknown')
 depends=(
     'ffmpeg'
@@ -12,8 +12,11 @@ depends=(
     'python-numpy'
     'python-scipy'
 )
+optdepends=(
+    'mkvtoolnix-cli: optional MKV muxing and track handling'
+)
 makedepends=('git')
-source=("${pkgname}::git+https://github.com/snwkkj/DublaSync.git#commit=4ba84eaffd8237f86451f30caab22d8023b55dbf")
+source=("${pkgname}::git+https://github.com/VicioBR/DublaSync.git#commit=f24dd3c2a61c087c8d9fbdd42aa24847063db6f8")
 sha256sums=('SKIP')
 
 prepare() {
